@@ -8,12 +8,14 @@ namespace GolbinsAndGui
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            //Show first form and start the message loop
             setupChar m_setup = new setupChar();
             m_setup.SetController(new Controller());
-            Application.Run(m_setup);
+            (m_setup).Show();
+            Application.Run(); // needed, otherwise app closes immediately
         }
     }
 }
