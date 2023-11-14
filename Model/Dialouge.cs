@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GolbinsAndGui
+namespace GolbinsAndGui.model
 {
     internal class Dialouge
     {

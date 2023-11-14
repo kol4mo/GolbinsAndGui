@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GolbinsAndGui
+namespace GolbinsAndGui.model
 {
     public class Player
     {
@@ -21,9 +21,9 @@ namespace GolbinsAndGui
         }
         private Moves[] moves;
         private int level;
-        private int intellegence;
-        private int strength;
-        private int constitution;
+        public int intellegence = 12;
+        private int strength = 12;
+        private int constitution = 12;
         public int hp { get; set; }
         public Player() { setPlayer(); } 
         public void setPlayer(string iname = "no", string iClass = "Wizard", int Intellegence = 12, int istength = 12, int iconstitution = 12)

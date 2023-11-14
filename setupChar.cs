@@ -1,10 +1,20 @@
+using GolbinsAndGui.model;
+
 namespace GolbinsAndGui
 {
     public partial class setupChar : Form
     {
+        Ui.Player player;
         public setupChar()
         {
             InitializeComponent();
+            player = new Ui.Player();
+        }
+
+        private void initializeCharacterComponent()
+        {
+            Intellegence.DataBindings.Add("Value", player, "strength", false, DataSourceUpdateMode.OnPropertyChanged);
+
         }
 
         public void SetController(Controller controller)

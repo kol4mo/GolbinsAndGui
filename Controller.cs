@@ -9,8 +9,8 @@ namespace GolbinsAndGui
 {
     public class Controller
     {
-        public Player m_player = new Player();
-        public Player m_enemy = new Player();
+        public model.Player m_player = new model.Player();
+        public model.Player m_enemy = new model.Player();
         private int currentDialouge;
         Form currentForm;
         public void initPlayer(string name, string pClass, int intellegence, int strength, int constitution)
@@ -22,13 +22,14 @@ namespace GolbinsAndGui
 
         public Form newEvent(Form prevForm)
         {
-            int temp = new Random().Next(1, 2);
+            int temp = new Random().Next(1);
             Form newform = null;
             switch(temp)
             {
                 case 0:
-                    newform = new setupChar();
-                    ((setupChar)newform).SetController(this);
+                    newform = new Form1();
+                    ((Form1)newform).SetController(this);
+                    currentForm = newform;
                     newform.Show();
                     prevForm.Close();
                     break;
@@ -39,7 +40,7 @@ namespace GolbinsAndGui
                     newform.Show();
                     prevForm.Close();
                     currentDialouge = 1;
-                    Dialouge.adventurer1(this);
+                    model.Dialouge.adventurer1(this);
                     break;
                 default:
                     newform = new setupChar();
@@ -58,11 +59,11 @@ namespace GolbinsAndGui
 
         public void movecurrentDialoug(bool choice)
         {
-            Dialouge.prevChoice = choice;
+            model.Dialouge.prevChoice = choice;
             switch(currentDialouge)
             {
                 case 1:
-                    if (Dialouge.adventurer1(this) == 1)
+                    if (model.Dialouge.adventurer1(this) == 1)
                     {
                         newEvent(currentForm);
                     }
