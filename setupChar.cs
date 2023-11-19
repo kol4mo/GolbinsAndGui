@@ -5,16 +5,21 @@ namespace GolbinsAndGui
     public partial class setupChar : Form
     {
         Ui.Player player;
+        Controller controller = new Controller();
         public setupChar()
         {
             InitializeComponent();
             player = new Ui.Player();
+            initializeCharacterComponent();
         }
 
         private void initializeCharacterComponent()
         {
-            Intellegence.DataBindings.Add("Value", player, "strength", false, DataSourceUpdateMode.OnPropertyChanged);
-
+            nameBox.DataBindings.Add("Text", player, "name", false, DataSourceUpdateMode.OnPropertyChanged);
+            classSelect.DataBindings.Add("Text", player, "pClass", false, DataSourceUpdateMode.OnPropertyChanged);
+            Intellegence.DataBindings.Add("Value", player, "intellegence", false, DataSourceUpdateMode.OnPropertyChanged);
+            Strength.DataBindings.Add("Value", player, "strength", false, DataSourceUpdateMode.OnPropertyChanged);
+            Constitution.DataBindings.Add("Value", player, "constitution", false, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         public void SetController(Controller controller)
@@ -27,8 +32,8 @@ namespace GolbinsAndGui
             {
                 classSelect.Text = "Wizard";
             }
-            m_owner.initPlayer(nameBox.Text, classSelect.Text, (int)Intellegence.Value, (int)Strength.Value, (int)Constitution.Value);
-            m_owner.newEvent(this);
+
+            controller.newEvent(this);
         }
 
         private void classSelect_SelectedIndexChanged(object sender, EventArgs e)

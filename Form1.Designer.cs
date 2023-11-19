@@ -28,32 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            Choice0 = new Button();
+            OtherName = new Label();
+            Choice1 = new Button();
+            OtherSpeak = new TextBox();
             SuspendLayout();
             // 
-            // button1
+            // Choice0
             // 
-            button1.Location = new Point(475, 162);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            Choice0.Location = new Point(63, 287);
+            Choice0.Name = "Choice0";
+            Choice0.Size = new Size(220, 115);
+            Choice0.TabIndex = 0;
+            Choice0.Text = "no";
+            Choice0.UseVisualStyleBackColor = true;
+            Choice0.Click += Choice0_Click;
+            // 
+            // OtherName
+            // 
+            OtherName.AutoSize = true;
+            OtherName.Location = new Point(576, 30);
+            OtherName.Name = "OtherName";
+            OtherName.Size = new Size(54, 25);
+            OtherName.TabIndex = 1;
+            OtherName.Text = "other";
+            // 
+            // Choice1
+            // 
+            Choice1.Location = new Point(534, 287);
+            Choice1.Name = "Choice1";
+            Choice1.Size = new Size(215, 115);
+            Choice1.TabIndex = 2;
+            Choice1.Text = "hi";
+            Choice1.UseVisualStyleBackColor = true;
+            Choice1.Click += Choice1_Click;
+            // 
+            // OtherSpeak
+            // 
+            OtherSpeak.Location = new Point(556, 95);
+            OtherSpeak.Multiline = true;
+            OtherSpeak.Name = "OtherSpeak";
+            OtherSpeak.Size = new Size(150, 46);
+            OtherSpeak.TabIndex = 3;
+            OtherSpeak.Text = "'ello";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(OtherSpeak);
+            Controls.Add(Choice1);
+            Controls.Add(OtherName);
+            Controls.Add(Choice0);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
+        private Button Choice0;
+        private Label OtherName;
+        private Button Choice1;
+        private TextBox OtherSpeak;
     }
 }

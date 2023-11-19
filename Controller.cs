@@ -20,46 +20,57 @@ namespace GolbinsAndGui
 
 
 
-        public Form newEvent(Form prevForm)
+        public void newEvent(Form prevForm)
         {
-            int temp = new Random().Next(1);
-            Form newform = null;
+            int temp = new Random().Next(0,2);
             switch(temp)
             {
                 case 0:
-                    newform = new Form1();
-                    ((Form1)newform).SetController(this);
-                    currentForm = newform;
-                    newform.Show();
+                    var c = FormManager.Current.CreateForm<Combat>();
+                    (c).SetController(this);
+                    currentForm = c;
+                    c.Show();
+                    setUpBattle();
                     prevForm.Close();
                     break;
                 case 1:
-                    newform = new setupChar();
-                    ((setupChar)newform).SetController(this);
-                    currentForm = newform;
-                    newform.Show();
+                    var f2 = FormManager.Current.CreateForm<Form1>();
+                    (f2).SetController(this);
+                    currentForm = f2;
+                    f2.Show();
                     prevForm.Close();
                     currentDialouge = 1;
+                    model.Dialouge.dialougePosition = 0;
                     model.Dialouge.adventurer1(this);
                     break;
                 default:
-                    newform = new setupChar();
                     break;
             }
-            return newform;
         }
-
+        public void changeOtherName(string name)
+        {
+            ((Form1)currentForm).setName(name);
+        }
         public void changeOtherText(string text)
         {
+            ((Form1)currentForm).setText(text);
         }
 
         public void changePlayerChoices(string choice1, string choice2)
         {
+            ((Form1)currentForm).setchoices(choice1, choice2);
+        }
+
+        public void setUpBattle()
+        {
+            m_player.resetHP();
+            m_enemy.resetHP();
+            ((Combat)currentForm).setUpBattle(m_player.hp, m_enemy.hp, m_player.getMoves()[0].ToString(), m_player.getMoves()[1].ToString(), m_player.getMoves()[2].ToString(), m_player.getMoves()[3].ToString());
         }
 
         public void movecurrentDialoug(bool choice)
         {
-            model.Dialouge.prevChoice = choice;
+            model.Dialouge.choice = choice;
             switch(currentDialouge)
             {
                 case 1:
@@ -77,6 +88,7 @@ namespace GolbinsAndGui
         {
             m_enemy.hp -= m_player.attemptAttack(move);
             m_player.hp -= m_enemy.attemptAttack(new Random().Next(0,4));
+            setHP();
             if (m_enemy.hp <= 0)
             {
                 //combat ui you win
@@ -87,6 +99,10 @@ namespace GolbinsAndGui
                 //combat ui lose
                 newEvent(currentForm);
             }
+        }
+        public void setHP()
+        {
+            ((Combat)currentForm).setHP(m_player.hp, m_enemy.hp);
         }
     }
 }

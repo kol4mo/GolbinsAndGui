@@ -19,7 +19,7 @@ namespace GolbinsAndGui.model
             LACARATE,
 
         }
-        private Moves[] moves;
+        private Moves[] moves = new Moves[4];
         private int level;
         public int intellegence = 12;
         private int strength = 12;
@@ -36,11 +36,15 @@ namespace GolbinsAndGui.model
             hp = 10 + (constitution / 2 - 5);
             setMoves();
         }
+
+        public void resetHP()
+        {
+            hp = 10 + (constitution / 2 - 5);
+        }
         public void setMoves()
         {
             switch (pClass) {
                 case "Wizard":
-                    moves = new Moves[4];
                     moves[0] = Moves.MAINHAND;
                     moves[1] = Moves.MAGICMISSILE;
                     moves[2] = Moves.FIREBALL;
@@ -52,7 +56,12 @@ namespace GolbinsAndGui.model
 
         public int attemptAttack(int move)
         {
-
+            Moves temp = moves[move];
+            switch (temp)
+            {
+                case Moves.MAINHAND:
+                    return 3;
+            }
             return 0;
         }
 

@@ -21,9 +21,28 @@ namespace GolbinsAndGui
         {
             m_owner = controller;
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public void setName(string name)
         {
+            OtherName.Text = name;
+        }
+        public void setText(string text)
+        {
+            OtherSpeak.Text = text;
+        }
+        public void setchoices(string choice0, string choice1)
+        {
+            this.Choice0.Text = choice0;
+            this.Choice1.Text = choice1;
+        }
+
+        private void Choice0_Click(object sender, EventArgs e)
+        {
+            m_owner.movecurrentDialoug(false);
+        }
+
+        private void Choice1_Click(object sender, EventArgs e)
+        {
+            m_owner.movecurrentDialoug(true);
 
         }
     }
