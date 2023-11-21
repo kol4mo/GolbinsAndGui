@@ -37,7 +37,8 @@ namespace GolbinsAndGui
             m_owner.combat(0);
         }
 
-        public void setHP(int playerHP, int enemyHP) {
+        public void setHP(int playerHP, int enemyHP)
+        {
             if (playerHP < 0)
             {
                 playerHP = 0;
@@ -48,6 +49,21 @@ namespace GolbinsAndGui
             }
             PlayerHP.Value = playerHP;
             EnemyHP.Value = enemyHP;
+        }
+
+        private void Attack2_Click(object sender, EventArgs e)
+        {
+            m_owner.combat(1);
+        }
+
+        private void Attack3_Click(object sender, EventArgs e)
+        {
+            m_owner.combat(2);
+        }
+
+        private void Attack4_Click(object sender, EventArgs e)
+        {
+            m_owner.combat(3);
         }
     }
 }

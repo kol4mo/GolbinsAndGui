@@ -44,6 +44,7 @@
             Attack3.TabIndex = 0;
             Attack3.Text = "Attack 3";
             Attack3.UseVisualStyleBackColor = true;
+            Attack3.Click += Attack3_Click;
             // 
             // Attack4
             // 
@@ -53,6 +54,7 @@
             Attack4.TabIndex = 1;
             Attack4.Text = "Attack 4";
             Attack4.UseVisualStyleBackColor = true;
+            Attack4.Click += Attack4_Click;
             // 
             // Attack1
             // 
@@ -72,6 +74,7 @@
             Attack2.TabIndex = 3;
             Attack2.Text = "Attack 2";
             Attack2.UseVisualStyleBackColor = true;
+            Attack2.Click += Attack2_Click;
             // 
             // EnemyHP
             // 

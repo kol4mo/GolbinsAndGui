@@ -10,6 +10,7 @@ namespace GolbinsAndGui.model
     {
         private string name;
         private string pClass;
+        private Random dice =new Random();
         public enum Moves
         {
             MAINHAND,
@@ -26,6 +27,10 @@ namespace GolbinsAndGui.model
         private int constitution = 12;
         public int hp { get; set; }
         public Player() { setPlayer(); } 
+        public Player(string name, string lass, int Tell, int streng, int constit)
+        {
+            setPlayer(name, lass, Tell, streng, constit);
+        }
         public void setPlayer(string iname = "no", string iClass = "Wizard", int Intellegence = 12, int istength = 12, int iconstitution = 12)
         {
             name = iname;
@@ -33,7 +38,7 @@ namespace GolbinsAndGui.model
             intellegence = Intellegence;
             strength = istength; 
             constitution = iconstitution;
-            hp = 10 + (constitution / 2 - 5);
+            hp = 20 + (constitution / 2 - 5);
             setMoves();
         }
 
@@ -60,11 +65,26 @@ namespace GolbinsAndGui.model
             switch (temp)
             {
                 case Moves.MAINHAND:
-                    return 3;
+                    return dice.Next(0,5);
+                case Moves.MAGICMISSILE:
+                    return rollDice(3, 4) + 3;
+                case Moves.FIREBALL:
+                    return rollDice(2, 6);
+                case Moves.RAYOFFROST:
+                    return rollDice(1, 9);
             }
-            return 0;
+            return 1;
         }
 
+        public int rollDice(int amount, int size)
+        {
+            int temp = 0;
+            for (int i = 0; i < amount; i++)
+            {
+                temp += dice.Next(0, size + 1);
+            }
+            return temp;
+        }
         public void dealtDamage(int damage)
         {
 

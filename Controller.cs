@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GolbinsAndGui.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
@@ -11,6 +12,8 @@ namespace GolbinsAndGui
     {
         public model.Player m_player = new model.Player();
         public model.Player m_enemy = new model.Player();
+        private model.NonPlayerCharacter conversation = new model.NonPlayerCharacter();
+        private Response response = new Response();
         private int currentDialouge;
         Form currentForm;
         public void initPlayer(string name, string pClass, int intellegence, int strength, int constitution)
@@ -39,9 +42,10 @@ namespace GolbinsAndGui
                     currentForm = f2;
                     f2.Show();
                     prevForm.Close();
-                    currentDialouge = 1;
-                    model.Dialouge.dialougePosition = 0;
-                    model.Dialouge.adventurer1(this);
+                    changeOtherName("General Grevious");
+                    response = conversation.setupResponse(1);
+                    changeOtherText();
+                    changePlayerChoices();
                     break;
                 default:
                     break;
@@ -51,14 +55,27 @@ namespace GolbinsAndGui
         {
             ((Form1)currentForm).setName(name);
         }
-        public void changeOtherText(string text)
+        public void changeOtherText()
         {
-            ((Form1)currentForm).setText(text);
+            ((Form1)currentForm).setText(response.responseText);
         }
 
-        public void changePlayerChoices(string choice1, string choice2)
+        public void changePlayerChoices()
         {
-            ((Form1)currentForm).setchoices(choice1, choice2);
+            ((Form1)currentForm).setchoices(response.dialogueOptions.Keys.ToArray()[0], response.dialogueOptions.Keys.ToArray()[1]);
+        }
+
+        public void moveDialogue(int choice) 
+        {
+            response = response.dialogueOptions.Values.ToArray()[choice];
+            if (response.dialogueOptions.Keys.ToArray().Length > 0)
+            {
+                changeOtherText();
+                changePlayerChoices();
+            } else
+            {
+                newEvent(currentForm);
+            }
         }
 
         public void setUpBattle()
@@ -68,21 +85,6 @@ namespace GolbinsAndGui
             ((Combat)currentForm).setUpBattle(m_player.hp, m_enemy.hp, m_player.getMoves()[0].ToString(), m_player.getMoves()[1].ToString(), m_player.getMoves()[2].ToString(), m_player.getMoves()[3].ToString());
         }
 
-        public void movecurrentDialoug(bool choice)
-        {
-            model.Dialouge.choice = choice;
-            switch(currentDialouge)
-            {
-                case 1:
-                    if (model.Dialouge.adventurer1(this) == 1)
-                    {
-                        newEvent(currentForm);
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
 
         public void combat(int move)
         {

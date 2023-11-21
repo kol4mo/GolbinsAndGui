@@ -32,7 +32,7 @@ namespace GolbinsAndGui
             {
                 classSelect.Text = "Wizard";
             }
-
+            controller.initPlayer(player.Name, player.PClass, player.Intellegence, player.Strength, player.Constitution);
             controller.newEvent(this);
         }
 

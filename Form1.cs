@@ -37,13 +37,12 @@ namespace GolbinsAndGui
 
         private void Choice0_Click(object sender, EventArgs e)
         {
-            m_owner.movecurrentDialoug(false);
+            m_owner.moveDialogue(0);
         }
 
         private void Choice1_Click(object sender, EventArgs e)
         {
-            m_owner.movecurrentDialoug(true);
-
+            m_owner.moveDialogue(1);
         }
     }
 }
