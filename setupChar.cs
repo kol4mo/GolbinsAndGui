@@ -1,5 +1,3 @@
-using GolbinsAndGui.model;
-
 namespace GolbinsAndGui
 {
     public partial class setupChar : Form
@@ -20,6 +18,8 @@ namespace GolbinsAndGui
             Intellegence.DataBindings.Add("Value", player, "intellegence", false, DataSourceUpdateMode.OnPropertyChanged);
             Strength.DataBindings.Add("Value", player, "strength", false, DataSourceUpdateMode.OnPropertyChanged);
             Constitution.DataBindings.Add("Value", player, "constitution", false, DataSourceUpdateMode.OnPropertyChanged);
+            Dextarity.DataBindings.Add("Value", player, "dextarity", false, DataSourceUpdateMode.OnPropertyChanged);
+            Wisdom.DataBindings.Add("Value", player, "wisdom", false, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         public void SetController(Controller controller)
@@ -28,11 +28,11 @@ namespace GolbinsAndGui
         }
         private void submitCharacter_Click(object sender, EventArgs e)
         {
-            if (classSelect.Text != "Wizard" || classSelect.Text != "Fighter" || classSelect.Text != "Paladin")
+            if (classSelect.Text != "Wizard" && classSelect.Text != "Fighter" && classSelect.Text != "Paladin")
             {
                 classSelect.Text = "Wizard";
             }
-            controller.initPlayer(player.Name, player.PClass, player.Intellegence, player.Strength, player.Constitution);
+            controller.initPlayer(player.Name, player.PClass, player.Intellegence, player.Strength, player.Constitution, player.Dextarity, player.Wisdom);
             controller.newEvent(this);
         }
 
@@ -62,12 +62,23 @@ namespace GolbinsAndGui
         }
         public void statCheck()
         {
-            int temp = 40 - (int)(Intellegence.Value + Strength.Value + Constitution.Value);
+            int temp = 72 - (int)(Intellegence.Value + Strength.Value + Constitution.Value + Dextarity.Value + Wisdom.Value);
             Intellegence.Maximum = temp + Intellegence.Value;
             Strength.Maximum = temp + Strength.Value;
             Constitution.Maximum = temp + Constitution.Value;
+            Dextarity.Maximum = temp + Dextarity.Value;
+            Wisdom.Maximum = temp + Wisdom.Value;
             points.Text = "Points Available: " + temp;
         }
 
+        private void Dextarity_ValueChanged(object sender, EventArgs e)
+        {
+            statCheck();
+        }
+
+        private void Wisdom_ValueChanged(object sender, EventArgs e)
+        {
+            statCheck();
+        }
     }
 }

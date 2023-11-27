@@ -1,10 +1,4 @@
 ﻿using GolbinsAndGui.model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GolbinsAndGui
 {
@@ -16,23 +10,24 @@ namespace GolbinsAndGui
         private Response response = new Response();
         private int currentDialouge;
         Form currentForm;
-        public void initPlayer(string name, string pClass, int intellegence, int strength, int constitution)
+        public void initPlayer(string name, string pClass, int intellegence, int strength, int constitution, int dextarity, int wisdom)
         {
-            m_player.setPlayer(name, pClass, intellegence, strength, constitution);
+            m_player.setPlayer(name, pClass, intellegence, strength, constitution, dextarity, wisdom);
         }
 
 
 
         public void newEvent(Form prevForm)
         {
-            int temp = new Random().Next(0,2);
-            switch(temp)
+            int temp = new Random().Next(0, 3);
+            switch (temp)
             {
                 case 0:
                     var c = FormManager.Current.CreateForm<Combat>();
                     (c).SetController(this);
                     currentForm = c;
                     c.Show();
+                    m_enemy = new Player();
                     setUpBattle();
                     prevForm.Close();
                     break;
@@ -42,11 +37,23 @@ namespace GolbinsAndGui
                     currentForm = f2;
                     f2.Show();
                     prevForm.Close();
-                    changeOtherName("General Grevious");
+                    changeOtherName("Eldran Shadowvale");
+                    response = conversation.setupResponse(0);
+                    changeOtherText();
+                    changePlayerChoices();
+                    break;
+                case 2:
+                    var f3 = FormManager.Current.CreateForm<Form1>();
+                    (f3).SetController(this);
+                    currentForm = f3;
+                    f3.Show();
+                    prevForm.Close();
+                    changeOtherName("Sylas Nightshade");
                     response = conversation.setupResponse(1);
                     changeOtherText();
                     changePlayerChoices();
                     break;
+
                 default:
                     break;
             }
@@ -65,14 +72,15 @@ namespace GolbinsAndGui
             ((Form1)currentForm).setchoices(response.dialogueOptions.Keys.ToArray()[0], response.dialogueOptions.Keys.ToArray()[1]);
         }
 
-        public void moveDialogue(int choice) 
+        public void moveDialogue(int choice)
         {
             response = response.dialogueOptions.Values.ToArray()[choice];
             if (response.dialogueOptions.Keys.ToArray().Length > 0)
             {
                 changeOtherText();
                 changePlayerChoices();
-            } else
+            }
+            else
             {
                 newEvent(currentForm);
             }
@@ -88,9 +96,35 @@ namespace GolbinsAndGui
 
         public void combat(int move)
         {
-            m_enemy.hp -= m_player.attemptAttack(move);
-            m_player.hp -= m_enemy.attemptAttack(new Random().Next(0,4));
+            int playerDamage = m_player.attemptAttack(move, m_enemy.ac);
+            int enemyDamage = m_enemy.attemptAttack(new Random().Next(0, 4), m_player.ac);
+            m_enemy.hp -= playerDamage;
+            m_player.hp -= enemyDamage;
             setHP();
+            string playerstring = "";
+            if (m_player.getMoves()[move] != Player.Moves.HEAL && playerDamage == 0)
+            {
+                playerstring = "You Missed.";
+            } else if (m_player.getMoves()[move] == Player.Moves.HEAL) {
+                playerstring = "You Healed.";
+            } else
+            {
+                playerstring = "You Dealt " + playerDamage + " Damage.";
+            }
+            string enemystring = "";
+            if (m_enemy.getMoves()[move] != Player.Moves.HEAL && enemyDamage == 0)
+            {
+                enemystring = "The Enemy Missed.";
+            }
+            else if (m_enemy.getMoves()[move] == Player.Moves.HEAL)
+            {
+                enemystring = "The Enemy Healed.";
+            }
+            else
+            {
+                enemystring = "The Enemy Dealt " + playerDamage + " Damage.";
+            }
+            ((Combat)currentForm).updateGame(playerstring, enemystring);
             if (m_enemy.hp <= 0)
             {
                 //combat ui you win

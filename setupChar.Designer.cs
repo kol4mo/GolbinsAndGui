@@ -38,9 +38,15 @@
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             points = new TextBox();
+            textBox4 = new TextBox();
+            Dextarity = new NumericUpDown();
+            textBox5 = new TextBox();
+            Wisdom = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)Intellegence).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Strength).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Constitution).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Dextarity).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Wisdom).BeginInit();
             SuspendLayout();
             // 
             // nameBox
@@ -128,11 +134,47 @@
             // 
             // points
             // 
-            points.Location = new Point(469, 197);
+            points.Location = new Point(472, 283);
             points.Name = "points";
             points.Size = new Size(267, 31);
             points.TabIndex = 9;
             points.Text = "Available Points: 40";
+            // 
+            // textBox4
+            // 
+            textBox4.Enabled = false;
+            textBox4.Location = new Point(450, 189);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(150, 31);
+            textBox4.TabIndex = 11;
+            textBox4.Text = "Dextarity";
+            // 
+            // Dextarity
+            // 
+            Dextarity.Location = new Point(606, 189);
+            Dextarity.Maximum = new decimal(new int[] { 20, 0, 0, 0 });
+            Dextarity.Name = "Dextarity";
+            Dextarity.Size = new Size(180, 31);
+            Dextarity.TabIndex = 10;
+            Dextarity.ValueChanged += Dextarity_ValueChanged;
+            // 
+            // textBox5
+            // 
+            textBox5.Enabled = false;
+            textBox5.Location = new Point(450, 235);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(150, 31);
+            textBox5.TabIndex = 13;
+            textBox5.Text = "Wisdom";
+            // 
+            // Wisdom
+            // 
+            Wisdom.Location = new Point(606, 235);
+            Wisdom.Maximum = new decimal(new int[] { 20, 0, 0, 0 });
+            Wisdom.Name = "Wisdom";
+            Wisdom.Size = new Size(180, 31);
+            Wisdom.TabIndex = 12;
+            Wisdom.ValueChanged += Wisdom_ValueChanged;
             // 
             // setupChar
             // 
@@ -141,6 +183,10 @@
             BackgroundImage = Properties.Resources.background;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(884, 471);
+            Controls.Add(textBox5);
+            Controls.Add(Wisdom);
+            Controls.Add(textBox4);
+            Controls.Add(Dextarity);
             Controls.Add(points);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
@@ -156,6 +202,8 @@
             ((System.ComponentModel.ISupportInitialize)Intellegence).EndInit();
             ((System.ComponentModel.ISupportInitialize)Strength).EndInit();
             ((System.ComponentModel.ISupportInitialize)Constitution).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Dextarity).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Wisdom).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -173,5 +221,9 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private TextBox points;
+        private TextBox textBox4;
+        private NumericUpDown Dextarity;
+        private TextBox textBox5;
+        private NumericUpDown Wisdom;
     }
 }

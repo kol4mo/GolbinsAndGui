@@ -38,7 +38,7 @@
             // 
             Choice0.Location = new Point(63, 287);
             Choice0.Name = "Choice0";
-            Choice0.Size = new Size(220, 115);
+            Choice0.Size = new Size(324, 115);
             Choice0.TabIndex = 0;
             Choice0.Text = "no";
             Choice0.UseVisualStyleBackColor = true;
@@ -47,7 +47,7 @@
             // OtherName
             // 
             OtherName.AutoSize = true;
-            OtherName.Location = new Point(576, 30);
+            OtherName.Location = new Point(63, 38);
             OtherName.Name = "OtherName";
             OtherName.Size = new Size(54, 25);
             OtherName.TabIndex = 1;
@@ -55,9 +55,9 @@
             // 
             // Choice1
             // 
-            Choice1.Location = new Point(534, 287);
+            Choice1.Location = new Point(393, 287);
             Choice1.Name = "Choice1";
-            Choice1.Size = new Size(215, 115);
+            Choice1.Size = new Size(313, 115);
             Choice1.TabIndex = 2;
             Choice1.Text = "hi";
             Choice1.UseVisualStyleBackColor = true;
@@ -65,10 +65,10 @@
             // 
             // OtherSpeak
             // 
-            OtherSpeak.Location = new Point(556, 95);
+            OtherSpeak.Location = new Point(63, 95);
             OtherSpeak.Multiline = true;
             OtherSpeak.Name = "OtherSpeak";
-            OtherSpeak.Size = new Size(150, 46);
+            OtherSpeak.Size = new Size(643, 108);
             OtherSpeak.TabIndex = 3;
             OtherSpeak.Text = "'ello";
             // 

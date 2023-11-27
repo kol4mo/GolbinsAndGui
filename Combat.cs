@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace GolbinsAndGui
+﻿namespace GolbinsAndGui
 {
     public partial class Combat : Form
     {
@@ -35,6 +25,12 @@ namespace GolbinsAndGui
         private void Attack1_Click(object sender, EventArgs e)
         {
             m_owner.combat(0);
+        }
+
+        public void updateGame(string playerstring, string enemystring)
+        {
+            gameResponse.Text = playerstring;
+            gameResponse.AppendText(enemystring);
         }
 
         public void setHP(int playerHP, int enemyHP)
@@ -65,5 +61,7 @@ namespace GolbinsAndGui
         {
             m_owner.combat(3);
         }
+
+
     }
 }

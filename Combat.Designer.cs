@@ -34,6 +34,7 @@
             Attack2 = new Button();
             EnemyHP = new ProgressBar();
             PlayerHP = new ProgressBar();
+            gameResponse = new TextBox();
             SuspendLayout();
             // 
             // Attack3
@@ -95,11 +96,20 @@
             PlayerHP.TabIndex = 5;
             PlayerHP.Value = 10;
             // 
+            // gameResponse
+            // 
+            gameResponse.Location = new Point(20, 160);
+            gameResponse.Multiline = true;
+            gameResponse.Name = "gameResponse";
+            gameResponse.Size = new Size(720, 95);
+            gameResponse.TabIndex = 6;
+            // 
             // Combat
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(gameResponse);
             Controls.Add(PlayerHP);
             Controls.Add(EnemyHP);
             Controls.Add(Attack2);
@@ -109,6 +119,7 @@
             Name = "Combat";
             Text = "Form2";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -119,5 +130,6 @@
         private Button Attack2;
         private ProgressBar EnemyHP;
         private ProgressBar PlayerHP;
+        private TextBox gameResponse;
     }
 }

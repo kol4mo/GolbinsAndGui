@@ -11,8 +11,8 @@ namespace GolbinsAndGui
 
             //Show first form and start the message loop
             ApplicationConfiguration.Initialize();
-            Application.Run(FormManager.Current); 
-            
+            Application.Run(FormManager.Current);
+
         }
     }
 }

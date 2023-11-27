@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Security;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GolbinsAndGui.Ui
 {
@@ -16,6 +10,8 @@ namespace GolbinsAndGui.Ui
         private int intellegence = 12;
         private int strength = 12;
         private int constitution = 12;
+        private int dextarity = 12;
+        private int wisdom = 12;
         public event PropertyChangedEventHandler? PropertyChanged;
         private void NotifyPropertyChanged([CallerMemberName] string caller = "")
         {
@@ -60,6 +56,18 @@ namespace GolbinsAndGui.Ui
         {
             get { return this.constitution; }
             set { this.constitution = value; NotifyPropertyChanged(); }
+        }
+
+        public int Dextarity
+        {
+            get { return this.dextarity; }
+            set { this.dextarity = value; NotifyPropertyChanged(); }
+        }
+
+        public int Wisdom
+        {
+            get { return this.wisdom; }
+            set { this.wisdom = value; NotifyPropertyChanged(); }
         }
     }
 }
