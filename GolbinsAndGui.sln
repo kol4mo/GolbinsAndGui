@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GolbinsAndGui", "GolbinsAnd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLogic", "..\Game Logic\GameLogic.csproj", "{A402CA06-899A-455E-9440-E3143810862C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiGoblins", "..\MauiGoblins\MauiGoblins.csproj", "{7E6DA733-690D-40C1-B039-3887FA87D4FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,12 @@ Global
 		{A402CA06-899A-455E-9440-E3143810862C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A402CA06-899A-455E-9440-E3143810862C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A402CA06-899A-455E-9440-E3143810862C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6DA733-690D-40C1-B039-3887FA87D4FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6DA733-690D-40C1-B039-3887FA87D4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6DA733-690D-40C1-B039-3887FA87D4FD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7E6DA733-690D-40C1-B039-3887FA87D4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6DA733-690D-40C1-B039-3887FA87D4FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6DA733-690D-40C1-B039-3887FA87D4FD}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
