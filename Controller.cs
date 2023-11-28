@@ -1,12 +1,13 @@
-﻿using GolbinsAndGui.model;
+﻿
+using Game_Logic;
 
 namespace GolbinsAndGui
 {
     public class Controller
     {
-        public model.Player m_player = new model.Player();
-        public model.Player m_enemy = new model.Player();
-        private model.NonPlayerCharacter conversation = new model.NonPlayerCharacter();
+        public Player m_player = new Player();
+        public Player m_enemy = new Player();
+        private NonPlayerCharacter conversation = new NonPlayerCharacter();
         private Response response = new Response();
         private int currentDialouge;
         Form currentForm;
