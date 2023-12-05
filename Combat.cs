@@ -1,8 +1,10 @@
-﻿namespace GolbinsAndGui
+﻿using System.Net.Http.Headers;
+
+namespace GolbinsAndGui
 {
     public partial class Combat : Form
     {
-        Controller m_owner;
+        Controller m_owner = new Controller();
         public Combat()
         {
             InitializeComponent();

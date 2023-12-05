@@ -1,5 +1,6 @@
 ﻿
 using Game_Logic;
+using System.Net.Http.Headers;
 
 namespace GolbinsAndGui
 {
@@ -10,7 +11,7 @@ namespace GolbinsAndGui
         private NonPlayerCharacter conversation = new NonPlayerCharacter();
         private Response response = new Response();
         private int currentDialouge;
-        Form currentForm;
+        Form currentForm = new Form();
         public void initPlayer(string name, string pClass, int intellegence, int strength, int constitution, int dextarity, int wisdom)
         {
             m_player.setPlayer(name, pClass, intellegence, strength, constitution, dextarity, wisdom);

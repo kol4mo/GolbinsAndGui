@@ -35,6 +35,7 @@
             EnemyHP = new ProgressBar();
             PlayerHP = new ProgressBar();
             gameResponse = new TextBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // Attack3
@@ -104,11 +105,21 @@
             gameResponse.Size = new Size(720, 95);
             gameResponse.TabIndex = 6;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(424, 80);
+            label1.Name = "label1";
+            label1.Size = new Size(59, 25);
+            label1.TabIndex = 7;
+            label1.Text = "label1";
+            // 
             // Combat
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(gameResponse);
             Controls.Add(PlayerHP);
             Controls.Add(EnemyHP);
@@ -131,5 +142,6 @@
         private ProgressBar EnemyHP;
         private ProgressBar PlayerHP;
         private TextBox gameResponse;
+        private Label label1;
     }
 }
