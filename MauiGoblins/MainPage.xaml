@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiGoblins.setupChar"
+             BackgroundImageSource="parchment.jpg">
+
+    <ScrollView>
+        <VerticalStackLayout
+            x:Name="mainLayout"
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+
+            <Entry
+                x:Name="nameBox"
+                
+                MaximumWidthRequest="200"/>
+            <Picker
+                x:Name="classBox"
+                HorizontalOptions="Center"
+                SelectedItem="{Binding pClass}"/>
+            <HorizontalStackLayout>
+                <VerticalStackLayout>
+            <Label
+                Text="Intellegence"
+                HorizontalOptions="Center"/>
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Label
+                    x:Name="IntBox"
+                    Text="{Binding Intellegence}"
+                VerticalOptions="Center"/>
+                <Button
+                    Text="+"
+                    Clicked="intellegenceUP"
+                    Background="brown"/>
+                <Button
+                    Text="-"
+                    Clicked="intellegenceDown"
+                    Background="brown"/>
+            </HorizontalStackLayout>
+            <Label
+                Text="Strength"
+                HorizontalOptions="Center"/>
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Label
+                    x:Name="strengthBox"
+                    Text="{Binding Strength}"
+                VerticalOptions="Center"/>
+                <Button
+                    Text="+"
+                    Clicked="strengthUP"
+                    Background="brown"/>
+                <Button
+                    Text="-"
+                    Clicked="strengthDown"
+                    Background="brown"/>
+            </HorizontalStackLayout>
+            <Label
+                Text="Constitution"
+                HorizontalOptions="Center"/>
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Label
+                    x:Name="ConstitutionBox"
+                    Text="{Binding Constitution}"
+                VerticalOptions="Center"/>
+                <Button
+                    Text="+"
+                    Clicked="ConstUP"
+                    Background="brown"/>
+                <Button
+                    Text="-"
+                    Clicked="ConstDown"
+                    Background="brown"/>
+            </HorizontalStackLayout>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                <Label
+                Text="Dextarity"
+                HorizontalOptions="Center"/>
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Label
+                    x:Name="DextarityBox"
+                    Text="{Binding Dextarity}"
+                VerticalOptions="Center"/>
+                <Button
+                    Text="+"
+                    Clicked="DexUP"
+                    Background="brown"/>
+                <Button
+                    Text="-"
+                    Clicked="DexDown"
+                    Background="brown"/>
+            </HorizontalStackLayout>
+            <Label
+                Text="Wisdom"
+                HorizontalOptions="Center"/>
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Label
+                    x:Name="WisdomBox"
+                    Text="{Binding Wisdom}"
+                VerticalOptions="Center"/>
+                <Button
+                    Text="+"
+                    Clicked="WisUP"
+                    Background="brown"/>
+                <Button
+                    Text="-"
+                    Clicked="WisDown"
+                    Background="brown"/>
+            </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+            <Button
+                HorizontalOptions="Center"
+                Text="Submit"
+                Clicked="submitCharacter_Click"
+                    Background="brown"
+                />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiGoblins.Dialouge"
+             BackgroundImageSource="parchment.jpg">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+            <Label
+                x:Name="OtherName"
+                Padding="30"
+                Text="Other"
+                HorizontalOptions="Center"
+                FontSize="30"/>
+            <Label
+                x:Name="OtherSpeak"
+                MaximumWidthRequest="400"
+                HorizontalOptions="Center"/>
+            <HorizontalStackLayout>
+                <VerticalStackLayout
+                    Padding="20"
+                MaximumWidthRequest="200"
+                        >
+                    <Label
+                        x:Name="Choice0"/>
+                    <Button
+                        Text="choice 1"
+                    Clicked="Choice0_Click"
+                    LineBreakMode="TailTruncation"
+                        Background="brown">
+                </Button>
+                </VerticalStackLayout>
+                <VerticalStackLayout
+                    Padding="20"
+                MaximumWidthRequest="200"
+                    >
+                    <Label
+                    x:Name="Choice1"/>
+                    <Button
+                        Text="choice 2"
+                    Clicked="Choice1_Click"
+                    LineBreakMode="TailTruncation"
+                        Background="brown"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

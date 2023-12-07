@@ -1,0 +1,1 @@
+C:\Neumont\Q5\everyotherclass\CSC160\GolbinsAndGui\MauiGoblins\MauiGoblins.csproj;x64

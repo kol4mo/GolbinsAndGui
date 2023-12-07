@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GolbinsAndGui", "GolbinsAndGui.csproj", "{F054D6D3-C5A6-4AE8-B8C6-ECFDA5030A8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameLogic", "Game Logic\GameLogic.csproj", "{6C32FA5A-56DC-4C04-8366-5BF90DC94B86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLogic", "..\Game Logic\GameLogic.csproj", "{A402CA06-899A-455E-9440-E3143810862C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GolbinsAndGui", "Goblins\GolbinsAndGui.csproj", "{D9394F8E-164C-496F-AEF8-A96E127950B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiGoblins", "..\MauiGoblins\MauiGoblins.csproj", "{7E6DA733-690D-40C1-B039-3887FA87D4FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiGoblins", "MauiGoblins\MauiGoblins.csproj", "{4D8ECFEB-AB97-4ED2-B5B2-29F18AB2F5F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,20 +15,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F054D6D3-C5A6-4AE8-B8C6-ECFDA5030A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F054D6D3-C5A6-4AE8-B8C6-ECFDA5030A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F054D6D3-C5A6-4AE8-B8C6-ECFDA5030A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F054D6D3-C5A6-4AE8-B8C6-ECFDA5030A8A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A402CA06-899A-455E-9440-E3143810862C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A402CA06-899A-455E-9440-E3143810862C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A402CA06-899A-455E-9440-E3143810862C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A402CA06-899A-455E-9440-E3143810862C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7E6DA733-690D-40C1-B039-3887FA87D4FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E6DA733-690D-40C1-B039-3887FA87D4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E6DA733-690D-40C1-B039-3887FA87D4FD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{7E6DA733-690D-40C1-B039-3887FA87D4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E6DA733-690D-40C1-B039-3887FA87D4FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7E6DA733-690D-40C1-B039-3887FA87D4FD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6C32FA5A-56DC-4C04-8366-5BF90DC94B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C32FA5A-56DC-4C04-8366-5BF90DC94B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C32FA5A-56DC-4C04-8366-5BF90DC94B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C32FA5A-56DC-4C04-8366-5BF90DC94B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9394F8E-164C-496F-AEF8-A96E127950B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9394F8E-164C-496F-AEF8-A96E127950B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9394F8E-164C-496F-AEF8-A96E127950B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9394F8E-164C-496F-AEF8-A96E127950B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D8ECFEB-AB97-4ED2-B5B2-29F18AB2F5F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D8ECFEB-AB97-4ED2-B5B2-29F18AB2F5F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D8ECFEB-AB97-4ED2-B5B2-29F18AB2F5F1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4D8ECFEB-AB97-4ED2-B5B2-29F18AB2F5F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D8ECFEB-AB97-4ED2-B5B2-29F18AB2F5F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D8ECFEB-AB97-4ED2-B5B2-29F18AB2F5F1}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
